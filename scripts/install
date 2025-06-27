@@ -15,6 +15,7 @@ ynh_script_progression "Setting up source files..."
 # Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir/build"
 
+ls
 cp "$install_dir/docs/botPolicies.yaml" "$install_dir/docs/$domain.botPolicies.yaml"
 
 # chmod +x "$install_dir" #755 needed?
