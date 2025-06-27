@@ -45,14 +45,21 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/TecharoHQ/anubis/archive/refs/tags/v1.14.2.tar.gz"
-    sha256 = "4527499aa58dc89e38ec1effb62bac390baa4974c8b7c07d6dc3f6b93c9ba920"
-
-    # autoupdate.strategy = "latest_github_tag"
+    amd64.url = "https://github.com/TecharoHQ/anubis/releases/download/v1.19.1/anubis_1.19.1_amd64.tar.gz"
+    amd64.sha256 = "36bff879f109560e0c5f3725618c5689df14a1a965b93ca4b08747309ed97acf"
+    arm64.url = "https://github.com/TecharoHQ/anubis/releases/download/v1.19.1/anubis_1.19.1_arm64.tar.gz"
+    arm64.sha256 = "35a52b1e731408e4546de218a688161eb4c5f906b228166490289540ecdb7974"
+    autoupdate.strategy = "latest_github_release"
+    autoupdate.asset.amd64 = ".*_amd64.tar.gz"
+    autoupdate.asset.arm64 = ".*_arm64.tar.gz"
 
     [resources.system_user]
 
     [resources.install_dir]
+
+    [install.path]
+    type = "path"
+    default = "/anubis"
 
     [resources.permissions]
     main.url = "/"
